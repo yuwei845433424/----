@@ -1,0 +1,22 @@
+{
+	"comics" : [
+	{
+	"imgSrc":"cover1.jpg",
+	"title":"Football",
+	"year":"2013",
+	"number":"1"
+	},
+	{
+	"imgSrc":"cover2.jpg",
+	"title":"Football",
+	"year":"2013",
+	"number":"2"
+	}
+	{
+	"imgSrc":"cover3.jpg",
+	"title":"Football",
+	"year":"2013",
+	"number":"3"
+	}
+	]
+}
