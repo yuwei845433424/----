@@ -1,0 +1,87 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<style type="text/css">
+
+            *{
+                margin:0;
+                padding:0;
+            }
+            h1{
+                text-align:center;
+                height:100px;
+            }
+            body{
+                background-color:#F9F8F7;
+            }
+            /*框架宽度*/
+            .all{
+                margin:0 auto;
+                width:960px;
+            }
+            /*每列的宽度，背景设置为无色，实现列于列之间的间隔*/
+            .number{
+                float:left;
+                width:300px;
+            }
+          
+            .content
+            {
+                margin:5px;
+                background-color:white;
+                border:1px solid #DDDDDD;
+            }
+            img{
+                margin:10px;
+            }
+            .text{ 
+                    margin:0 10px 10px; 
+                    font-size:12px; 
+                    line-height:1.35em; 
+                    color:#444;
+                    }
+<style>
+#container{width:640px;}
+#container div{background:#000; width:200px; position:absolute;}
+</style>
+</head>
+<body>
+<div id="main"> </div>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="jquery.tmpl.min.js"></script>
+
+<script>
+$(function(){
+    var populate = function( data ){
+        $( "#comics" ).tmpl(data.comics).appendTo( "#main" );
+    }
+    $.ajax({
+        type : 'get',
+        url : 'data.json',
+        success : populate,
+        dataType : "json"
+    });
+}
+)
+
+</script>
+<script id="comics" type"text/x-jquery-tmple">
+
+
+<div class="comic"><img src="${imgSrc}">
+    <div class="details">
+        <div class="title">
+            <h3>${title}</h3>
+        </div>
+        <div class="year">
+            <strong>Year:</strong> ${year}
+        </div>
+        <div class="number">
+            <strong>Issue Number:</strong> ${number}
+            </div>
+        </div>
+</div>
+</script>
+<script>
